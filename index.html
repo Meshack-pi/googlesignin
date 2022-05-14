@@ -1,37 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-signin-client_id" content="905293837254-vlubcvkf9vjpdl06oiffii34nbsqt0qp.apps.googleusercontent.com">
     <title>Google signin</title>
     <link rel="stylesheet" href="style.css">
-  <meta name="google-signin-client_id" content="905293837254-vlubcvkf9vjpdl06oiffii34nbsqt0qp.apps.googleusercontent.com">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" 
+    rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  
 
 </head>
+
 <body>
-  <div id="my-signin2"></div>
-  <script>
-    function onSuccess(googleUser) {
-      console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
-    }
-    function onFailure(error) {
-      console.log(error);
-    }
-    function renderButton() {
-      gapi.signin2.render('my-signin2', {
-        'scope': 'profile email',
-        'width': 240,
-        'height': 50,
-        'longtitle': true,
-        'theme': 'dark',
-        'onsuccess': onSuccess,
-        'onfailure': onFailure
-      });
-    }
-  </script>
+<h2 class="alert alert-primary">Google SignIn Template</h2>
+    <div class="g-signin2" data-onsuccess="onSignin"></div>
+
+<div class="data">
+    <p>Name</p>
+    <p id="name" class="alert alert-success"></p>
+    <p>Profile Picture</p>
+    <img id="image" class="rounded-circle" width="100" height="100"/>
+    <p id="email"></p>
+    <button type="button" class="btn btn-danger" onclick="signOut();">Sign Out</button>
+</div>
+  
 <script src="main.js"></script>
-  <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" 
+integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+  <script src="https://apis.google.com/js/platform.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </body>
 </html>
